@@ -26,5 +26,3 @@ io.sockets.on('connection',function(socket)
 const server = http.listen(8080, function(){
     console.log("This comes up in the terminal --> listening port:8080")
 })
-
-server.listen(8080);
