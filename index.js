@@ -2,6 +2,8 @@ const express = require('express')
 const app = express()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
+require('dotenv').config()
+
 
 app.use(express.static('public'));
 
@@ -23,6 +25,6 @@ io.sockets.on('connection',function(socket)
     })
 })
 
-const server = http.listen(8080, function(){
+const server = http.listen(process.env.PORT || 8080, function(){
     console.log("This comes up in the terminal --> listening port:8080")
 })
